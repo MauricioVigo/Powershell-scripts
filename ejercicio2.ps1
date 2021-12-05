@@ -1,23 +1,24 @@
-﻿
-
-
-$x=Read-Host "Ingresa el nombre de usuario"
+﻿$x=Read-Host "Ingresa el nombre de usuario"
 $y=Read-Host "Cual es la contraseña"
 $z=ConvertTo-SecureString "$y" -AsPlainText -Force
-$w=Get-LocalUser | where-Object Name -eq "$x$i" | Measure
+$w="Get-LocalUser | where-Object Name -eq "$x$i" | Measure"
 
+write-host "($w).count"
 for ($i = 1; $i -lt 6; $i++)
 { 
-if ((get-localuser "$x $i") -eq false)
+    if (($w).Count -eq 0)
 {
-   New-LocalUser "$x $i" -Password $z 
+    New-LocalUser "$x $i" -Password $z 
 }
+
 else
 {
-    
+  write-host "El usuario ya existe" 
+  
 }
     
 }
 
 
 
+   
