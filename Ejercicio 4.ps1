@@ -8,11 +8,11 @@ $x=read-host "De que tamaño deseas buscar los ficheros"
 }
     else
 {
-        ls $y | Where-Object length -ge $x | Sort-Object Length 
+        ls $y | Where-Object length -ge $x | Sort-Object Length #<se busca la longitud ordenando por tamaño>
 }
    $z=Read-Host "Deseas volver a intentarlo"
 }        
-while ($z -like "si")
+while ($z -like "si") #<se repite mientras se indique si en la pregunta>
 
 
 

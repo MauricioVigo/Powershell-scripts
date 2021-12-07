@@ -1,5 +1,5 @@
 ﻿$x=read-Host "Cual es el nombre del archivo"
-if ((test-path $x) -like "false")
+if ((test-path $x) -like "false") #<se ve si el archivo existe con test-path>
 {
     Write-Host "El fichero no existe"
 }
@@ -14,10 +14,10 @@ else
 
 $z=Read-Host "Indicanos que opciones deseas realizar"
     
-   switch ($z)
+   switch ($z)   #<se escribe la opcion ingresada por el usuario en switch>
    {
-       'B' {rm $x}
-       'M' {Get-ItemProperty $x}
+       'B' {rm $x}                 #<y el resultado de las posibles opciones, si hubiera una no contemplada se pondria un default>
+       'M' {Get-ItemProperty $x}  
      
    }
     write-host "--------------------"
