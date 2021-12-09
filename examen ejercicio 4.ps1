@@ -1,0 +1,1 @@
+﻿Get-NetAdapter | Where-Object Status -eq up | Select-Object -Property Name, LinkSpeed

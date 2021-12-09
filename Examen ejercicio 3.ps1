@@ -1,0 +1,1 @@
+﻿ls -Path C:\Windows -File * | Sort-Object -Property Length -Descending | Select-Object -First 2 
